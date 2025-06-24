@@ -1,0 +1,2 @@
+I made some other godot thingys to get used to gdscript so this code is from those
+Very useful initially for things like how do you declare variables but don't really need now

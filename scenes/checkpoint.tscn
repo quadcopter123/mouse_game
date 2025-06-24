@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbw2fo22ad60x"]
+
+[ext_resource type="Texture2D" uid="uid://ocxthkhoag7m" path="res://sprites/old_sprites/checkpoint_flag.png" id="1_fftyj"]
+[ext_resource type="Script" path="res://code/checkpoint.gd" id="1_qtt1j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bpbhr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imrre"]
+atlas = ExtResource("1_fftyj")
+region = Rect2(0, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o472s"]
+atlas = ExtResource("1_fftyj")
+region = Rect2(25, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1uxrr"]
+atlas = ExtResource("1_fftyj")
+region = Rect2(50, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42hlw"]
+atlas = ExtResource("1_fftyj")
+region = Rect2(75, 0, 25, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m641"]
+atlas = ExtResource("1_fftyj")
+region = Rect2(100, 0, 25, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8p3fo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imrre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o472s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1uxrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o472s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imrre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42hlw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m641")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42hlw")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
+
+[node name="Checkpoint" type="Node2D"]
+script = ExtResource("1_qtt1j")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_bpbhr")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Area2D"]
+sprite_frames = SubResource("SpriteFrames_8p3fo")
+animation = &"new_animation"
+frame_progress = 0.142466

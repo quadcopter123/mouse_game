@@ -1,0 +1,16 @@
+- Level select
+- More levels
+- Cut win screen in favour of level select
+- More sfx and maybe music
+- Settings for volume and maybe screen sizes
+- Settings for more control options
+- Maybe controller stick support for accessibility
+- Allow rebind buttons
+- Don't think I need to worry about graphics settings but who knows
+- Colourblind options + other accessibilty things
+- Better art
+- Loading screens
+- Checkpoint system
+- Make doors more robust / make them reset upon death for level design purposes
+- Make icon not blurry (possible?)
+- Make actual title?

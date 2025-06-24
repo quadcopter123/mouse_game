@@ -1,0 +1,131 @@
+[gd_scene load_steps=17 format=3 uid="uid://cmjnnw34ngmfy"]
+
+[ext_resource type="Theme" uid="uid://bmintbtqkb0y" path="res://ui/main_menu_ui.tres" id="1_76lvs"]
+[ext_resource type="Script" path="res://code/skin_menu.gd" id="2_x4jam"]
+[ext_resource type="Texture2D" uid="uid://o5iimj1ic3w4" path="res://sprites/back_arrow.png" id="4_6f1lb"]
+[ext_resource type="Texture2D" uid="uid://segy2tkrhspa" path="res://sprites/front_arrow.png" id="5_qdy3f"]
+[ext_resource type="Texture2D" uid="uid://buakfb12ih1l7" path="res://sprites/player_mouse.png" id="6_xw4pr"]
+
+[sub_resource type="Gradient" id="Gradient_6hft6"]
+colors = PackedColorArray(0.494118, 0.145098, 0.32549, 1, 0, 0, 0, 1)
+metadata/_snap_count = 2
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7pvht"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ii8cu"]
+width = 1920
+height = 1080
+color_ramp = SubResource("Gradient_6hft6")
+noise = SubResource("FastNoiseLite_7pvht")
+
+[sub_resource type="InputEventKey" id="InputEventKey_ckb3k"]
+device = -1
+keycode = 4194319
+
+[sub_resource type="InputEventKey" id="InputEventKey_ilp47"]
+device = -1
+keycode = 65
+unicode = 97
+
+[sub_resource type="Shortcut" id="Shortcut_63htd"]
+events = [SubResource("InputEventKey_ckb3k"), SubResource("InputEventKey_ilp47")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4hkd1"]
+device = -1
+keycode = 4194321
+
+[sub_resource type="InputEventKey" id="InputEventKey_ytn0a"]
+device = -1
+keycode = 68
+unicode = 100
+
+[sub_resource type="Shortcut" id="Shortcut_y6kwn"]
+events = [SubResource("InputEventKey_4hkd1"), SubResource("InputEventKey_ytn0a")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4np25"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_l1fjs"]
+events = [SubResource("InputEventKey_4np25")]
+
+[node name="SkinMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 8
+theme = ExtResource("1_76lvs")
+script = ExtResource("2_x4jam")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("NoiseTexture2D_ii8cu")
+
+[node name="main_center_things" type="CenterContainer" parent="."]
+layout_mode = 2
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="seperator" type="VBoxContainer" parent="main_center_things"]
+layout_mode = 2
+alignment = 1
+
+[node name="sprite_container" type="CenterContainer" parent="main_center_things/seperator"]
+layout_mode = 2
+
+[node name="sprite" type="TextureRect" parent="main_center_things/seperator/sprite_container"]
+custom_minimum_size = Vector2(256, 256)
+layout_mode = 2
+texture = ExtResource("6_xw4pr")
+stretch_mode = 5
+
+[node name="buttons_and_text" type="HBoxContainer" parent="main_center_things/seperator"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="back" type="Button" parent="main_center_things/seperator/buttons_and_text"]
+custom_minimum_size = Vector2(128, 192)
+layout_mode = 2
+disabled = true
+shortcut = SubResource("Shortcut_63htd")
+icon = ExtResource("4_6f1lb")
+icon_alignment = 1
+expand_icon = true
+
+[node name="skin_description" type="Label" parent="main_center_things/seperator/buttons_and_text"]
+layout_mode = 2
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 64
+text = " Normal"
+horizontal_alignment = 1
+
+[node name="forward" type="Button" parent="main_center_things/seperator/buttons_and_text"]
+custom_minimum_size = Vector2(128, 192)
+layout_mode = 2
+shortcut = SubResource("Shortcut_y6kwn")
+icon = ExtResource("5_qdy3f")
+icon_alignment = 1
+expand_icon = true
+
+[node name="back_to_menu" type="Button" parent="."]
+z_index = 5
+z_as_relative = false
+layout_mode = 2
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 441.0
+offset_bottom = 160.0
+mouse_force_pass_scroll_events = false
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_l1fjs")
+text = "Back"
+icon = ExtResource("4_6f1lb")
+expand_icon = true
+
+[connection signal="pressed" from="main_center_things/seperator/buttons_and_text/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="main_center_things/seperator/buttons_and_text/forward" to="." method="_on_forward_pressed"]
+[connection signal="pressed" from="back_to_menu" to="." method="_on_back_to_menu_pressed"]

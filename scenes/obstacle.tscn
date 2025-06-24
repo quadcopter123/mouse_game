@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b32s8hl6uy64e"]
+
+[ext_resource type="PackedScene" uid="uid://bery2rl2mscaa" path="res://scenes/door.tscn" id="1_l5m8f"]
+[ext_resource type="Texture2D" uid="uid://ddqblning400" path="res://sprites/obstacle.png" id="2_4oots"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nacja"]
+size = Vector2(16, 32)
+
+[node name="Obstacle" type="Node2D"]
+
+[node name="DoorTrigger" parent="." instance=ExtResource("1_l5m8f")]
+position = Vector2(164, 110)
+
+[node name="Area2D" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_nacja")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("2_4oots")

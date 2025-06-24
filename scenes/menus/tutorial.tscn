@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://clbfam8xt5a5g"]
+
+[ext_resource type="Script" path="res://code/tutorial.gd" id="1_7i1pd"]
+[ext_resource type="FontFile" uid="uid://d0g0nqajmpwmq" path="res://sprites/fonts/Early GameBoy.ttf" id="1_72ak3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwib4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rstod"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7i1pd")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mwib4")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="Button" type="Button" parent="CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_72ak3")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rstod")
+text = "Mankind is dead
+Blood is fuel
+wait wrong script hold on"
+
+[connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]
