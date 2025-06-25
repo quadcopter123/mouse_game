@@ -41,6 +41,10 @@ folder_colors={
 "res://sprites/": "orange"
 }
 
+[global]
+
+rcedit=true
+
 [global_group]
 
 bullet=""
