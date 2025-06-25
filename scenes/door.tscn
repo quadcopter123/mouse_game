@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bery2rl2mscaa"]
 
-[ext_resource type="Script" path="res://code/door_trigger.gd" id="1_u2mmq"]
+[ext_resource type="Script" uid="uid://bl7ppeo25s3ei" path="res://code/door_trigger.gd" id="1_u2mmq"]
 [ext_resource type="Texture2D" uid="uid://cwx1hsgjnv3xg" path="res://sprites/trigger.png" id="2_5bjf8"]
 [ext_resource type="Texture2D" uid="uid://c311h5hr0ujec" path="res://sprites/spikes.png" id="3_3wib0"]
 

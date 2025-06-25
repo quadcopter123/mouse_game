@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://b4yefkmdnfq3u"]
 
 [ext_resource type="Theme" uid="uid://bmintbtqkb0y" path="res://ui/main_menu_ui.tres" id="1_wugym"]
-[ext_resource type="Script" path="res://code/settings.gd" id="2_xoqwi"]
+[ext_resource type="Script" uid="uid://pmqxpd86848w" path="res://code/settings.gd" id="2_xoqwi"]
 [ext_resource type="Texture2D" uid="uid://o5iimj1ic3w4" path="res://sprites/back_arrow.png" id="4_8m356"]
 
 [sub_resource type="Gradient" id="Gradient_b2kbf"]

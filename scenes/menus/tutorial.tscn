@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://clbfam8xt5a5g"]
 
-[ext_resource type="Script" path="res://code/tutorial.gd" id="1_7i1pd"]
-[ext_resource type="FontFile" uid="uid://d0g0nqajmpwmq" path="res://sprites/fonts/Early GameBoy.ttf" id="1_72ak3"]
+[ext_resource type="Script" uid="uid://dywaepd4f5iey" path="res://code/tutorial.gd" id="1_7i1pd"]
+[ext_resource type="FontFile" uid="uid://dnl8hosc811vc" path="res://sprites/fonts/Early GameBoy.ttf" id="1_72ak3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwib4"]
 bg_color = Color(0, 0, 0, 1)

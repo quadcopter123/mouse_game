@@ -12,7 +12,7 @@ config_version=5
 
 config/name="mouse_game"
 run/main_scene="res://Main.tscn"
-config/features=PackedStringArray("4.3", "Mobile")
+config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://player_mouse_but_big.png"
 config/windows_native_icon="res://player_mouse.ico"
 
