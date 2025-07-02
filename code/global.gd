@@ -15,6 +15,7 @@ extends Node
 @onready var time_end = 0
 @onready var deaths = 0
 @onready var skins_ran_through = false
+@onready var farthest_level_reached = 0
 var value
 
 #FIX ME idk how audio works

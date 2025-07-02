@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://wnuahcni62ip"]
+
+[ext_resource type="Theme" uid="uid://bmintbtqkb0y" path="res://ui/main_menu_ui.tres" id="1_xqyeo"]
+[ext_resource type="PackedScene" uid="uid://0yeji0j0gv7a" path="res://scenes/level_choice.tscn" id="2_1g16o"]
+[ext_resource type="Texture2D" uid="uid://djvtui7a7ytu6" path="res://background.tres" id="2_p7c2r"]
+[ext_resource type="Texture2D" uid="uid://o5iimj1ic3w4" path="res://sprites/back_arrow.png" id="3_25yo6"]
+[ext_resource type="Script" uid="uid://d018ds37j0ch5" path="res://code/back_to_menu.gd" id="4_vgm8m"]
+[ext_resource type="Texture2D" uid="uid://segy2tkrhspa" path="res://sprites/front_arrow.png" id="5_pwdrg"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4np25"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_p7c2r"]
+events = [SubResource("InputEventKey_4np25")]
+
+[node name="LevelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 110.0
+offset_bottom = 110.0
+theme = ExtResource("1_xqyeo")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_p7c2r")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 64
+theme_override_font_sizes/font_size = 128
+text = "LEVELS:"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 192)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("3_25yo6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 32
+theme_override_constants/v_separation = 32
+columns = 5
+
+[node name="level_choice" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+disabled = true
+
+[node name="level_choice2" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice3" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice4" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice5" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice6" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice7" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice8" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice9" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="level_choice10" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer/GridContainer" instance=ExtResource("2_1g16o")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(128, 192)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("5_pwdrg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="back_to_menu" type="Button" parent="."]
+z_index = 5
+z_as_relative = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 441.0
+offset_bottom = 160.0
+mouse_force_pass_scroll_events = false
+theme_override_constants/outline_size = 32
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_p7c2r")
+text = "Back"
+icon = ExtResource("3_25yo6")
+expand_icon = true
+script = ExtResource("4_vgm8m")
+
+[connection signal="pressed" from="back_to_menu" to="back_to_menu" method="_on_pressed"]

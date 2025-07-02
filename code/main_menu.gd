@@ -22,3 +22,7 @@ func _on_settings_pressed() -> void:
 #change to skin scene
 func _on_skins_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/menus/skin_menu.tscn")
+
+
+func _on_level_select_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/menus/level_select.tscn")

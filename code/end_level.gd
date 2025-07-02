@@ -38,3 +38,5 @@ func _on_body_entered(body: Node2D) -> void: #FIX ME make so only player can tri
 	else:
 		Global.level = next_level_path
 		get_tree().change_scene_to_file(next_level_path)
+		if next_level_number > Global.farthest_level_reached:
+			Global.farthest_level_reached = next_level_number
