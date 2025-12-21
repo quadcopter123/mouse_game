@@ -11,12 +11,15 @@ extends Node
 @onready var death_volume = 100
 @onready var _bus := AudioServer.get_bus_index("Master") #FIX ME idk how this works
 @onready var bullets_fired = 0
-@onready var time_start = 0
-@onready var time_end = 0
 @onready var deaths = 0
-@onready var skins_ran_through = false
 @onready var farthest_level_reached = 0
-var value
+@onready var time_start = 0
+@onready var time_end
+@onready var level_time_array = []
+
+func level_time_completed(curr_level, time_end):
+	var completion_time = (time_end - time_start)/1000
+	level_time_array.insert(curr_level, completion_time)
 
 #FIX ME idk how audio works
 func _ready() -> void:

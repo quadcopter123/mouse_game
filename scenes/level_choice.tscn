@@ -8,8 +8,6 @@ custom_minimum_size = Vector2(192, 192)
 offset_right = 256.0
 offset_bottom = 256.0
 theme = ExtResource("1_o3w2e")
-text = "0"
-alignment = 2
 script = ExtResource("1_kti6r")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]

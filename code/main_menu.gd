@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 #written by jessie
 #handles main menu input
 

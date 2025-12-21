@@ -1,10 +1,14 @@
-extends Control
+extends CanvasLayer
 #written by jessie
 func _ready() -> void:
 	Global.time_end = Time.get_ticks_msec()
-	$CenterContainer/VBoxContainer/time.text = "Time: " + str("%0.2f" % ((Global.time_end - Global.time_start)/1000.0)) + "s"
-	$CenterContainer/VBoxContainer/Bullets_fired.text = "Bullets fired: " + str(Global.bullets_fired)
-	$CenterContainer/VBoxContainer/deaths.text = "Deaths: " + str(Global.deaths)
+	var time_for_real = 0
+	for n in Global.level_time_array.size():
+		time_for_real = time_for_real + Global.level_time_array[n]
+	
+	$CenterContainer/VBoxContainer/HBoxContainer/time.text = "Time: " + str("%0.2f" % time_for_real + "s")
+	$CenterContainer/VBoxContainer/HBoxContainer2/Bullets_fired.text = "Bullets fired: " + str(Global.bullets_fired)
+	$CenterContainer/VBoxContainer/HBoxContainer3/deaths.text = "Deaths: " + str(Global.deaths)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 #FIX ME restructure menus so time only runs while player can move
 #change menus process mode to when paused or something requires more research

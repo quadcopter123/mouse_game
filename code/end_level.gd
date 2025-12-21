@@ -14,7 +14,7 @@ const FILE_BEGIN = "res://scenes/levels/level_"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	Global.time_start = Time.get_ticks_msec()
 
 #60 times per second
 func _physics_process(delta: float) -> void:
@@ -27,6 +27,9 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void: #FIX ME make so only player can trigger
 	#gets current level path
 	var current_scene_file = get_tree().current_scene.scene_file_path
+	
+	Global.level_time_completed(current_scene_file.to_int(),Time.get_ticks_msec())
+	
 	#converts current level path to a number
 	var next_level_number = current_scene_file.to_int() + 1
 	#gets next level path using next level number

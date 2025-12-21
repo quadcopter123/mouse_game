@@ -1,9 +1,9 @@
-extends Control
+extends CanvasLayer
 #written by jessie
 #controls the skin menu function and presentation
-var skin_list = ["Normal", "brisket","creature of steel", "zelda", "plumber man", "master mouse","artificial stupidity","he put me in a potato","ready for titanfall","teeny tiny nightmares","vessel","test","Bad time"]
+var skin_list = ["Normal", "Brisket","Creature of Steel", "Zelda", "Plumber man", "Master Mouse","Artificial Stupidity","He put me in a potato","Ready for titanfall","Teeny tiny nightmares","Vessel","Test","Bad time"]
 var curr_skin = 0
-var metal_gear_joke = ["snake","solid snake","no!\nthat is not! solid snake!","liquid snake","gaseous snake","plasma snake","bose einstein condensate\nsnake","venom snake","solidus snake","naked snake","big boss","little boss","medium boss"]
+var metal_gear_joke = ["Snake","Solid Snake","No! That is not!\nSolid Snake!","Liquid Snake","Gaseous Snake","Plasma Snake","Bose Einstein Condensate\nSnake","Venom Snake","Solidus Snake","Naked snake","Big Boss","Little Boss","Medium Boss"]
 var metal_bool = false
 var metal_int = 0
 #there's a better way to do this I just know it
@@ -15,12 +15,8 @@ var metal_int = 0
 #godot sorts files alphabetically so something with folders and get_file_int() maybe
 #if it works it works
 var skins_texture = [load("res://sprites/player_mouse.png"),load("res://sprites/player_skins/bridget.png"),load("res://sprites/player_skins/creature_of_steel.png"),load("res://sprites/player_skins/link.png"),load("res://sprites/player_skins/mario_mouse.png"),load("res://sprites/player_skins/master_mouse.png"),load("res://sprites/player_skins/moron.png"),load("res://sprites/player_skins/potato_mouse.png"),load("res://sprites/player_skins/ready_for_titanfall.png"),load("res://sprites/player_skins/very_little_nightmare.png"),load("res://sprites/player_skins/vessel.png"),load("res://sprites/player_skins/you_cant_say_my_name.png"),load("res://sprites/player_skins/bad_time.png")]
-@onready var _text_label = get_node("main_center_things/seperator/buttons_and_text/skin_description")
-@onready var _texture_rect = get_node("main_center_things/seperator/sprite_container/sprite")
-
-func _ready() -> void:
-	if Global.skins_ran_through:
-		$main_center_things/seperator/buttons_and_text/back.disabled = false
+@onready var _text_label = get_node("skin_description")
+@onready var _texture_rect = get_node("main_center_things/seperator/buttons_and_sprite/sprite_container/sprite")
 
 func _on_forward_pressed() -> void:
 	#could definitley make a func for all this
@@ -28,8 +24,6 @@ func _on_forward_pressed() -> void:
 		curr_skin += 1
 		if curr_skin > 12: #resets back to 0 looping the array
 			curr_skin = 0
-			$main_center_things/seperator/buttons_and_text/back.disabled = false
-			Global.skins_ran_through = true
 		if curr_skin == 11: #starts the metal gear joke
 			metal_bool = true
 			metal_int = 0

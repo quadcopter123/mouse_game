@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dywaepd4f5iey" path="res://code/tutorial.gd" id="1_7i1pd"]
 [ext_resource type="FontFile" uid="uid://dnl8hosc811vc" path="res://sprites/fonts/Early GameBoy.ttf" id="1_72ak3"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mwib4"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tqpx"]
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rstod"]
@@ -18,27 +18,33 @@ grow_vertical = 2
 script = ExtResource("1_7i1pd")
 
 [node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mwib4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4tqpx")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Button" type="Button" parent="CenterContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_72ak3")
-theme_override_font_sizes/font_size = 80
+theme_override_font_sizes/font_size = 60
 theme_override_styles/focus = SubResource("StyleBoxEmpty_rstod")
 text = "Mankind is dead
 Blood is fuel
-wait wrong script hold on"
+Wait wrong script hold on"
 
 [connection signal="pressed" from="CenterContainer/Button" to="." method="_on_button_pressed"]

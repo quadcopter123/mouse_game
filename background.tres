@@ -8,7 +8,7 @@ metadata/_snap_count = 2
 noise_type = 3
 
 [resource]
-width = 1920
-height = 1080
+width = 1024
+height = 1024
 color_ramp = SubResource("Gradient_a3uwa")
 noise = SubResource("FastNoiseLite_uhsc8")
